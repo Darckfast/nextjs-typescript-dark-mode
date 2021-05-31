@@ -7,5 +7,4 @@ This template include:
 * eslint
 * styled-components
 * checkbox component
-
-#
+* dark-mode
