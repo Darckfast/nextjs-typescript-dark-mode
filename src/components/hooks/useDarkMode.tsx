@@ -10,7 +10,8 @@ export const useDarkMode = (): [string, () => void] => {
   }
 
   const themeToggler = (): void => {
-    setMode((mode: string) => mode === 'light' ? 'dark' : 'light')
+    console.log(theme)
+    setMode(theme === 'light' ? 'dark' : 'light')
   }
 
   useEffect(() => {

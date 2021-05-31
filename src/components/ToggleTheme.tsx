@@ -8,10 +8,9 @@ interface ToggleThemeProps {
 }
 
 const ToggleTheme: React.FC<ToggleThemeProps> = props => {
-  console.log(props.currentTheme)
   return (
     <a className={'toggle-button'} onClick={props.changeTheme}>
-      {props.currentTheme === 'light' ? <LightIcon></LightIcon> : <DarkIcon></DarkIcon>}
+      {props.currentTheme === 'dark' ? <DarkIcon></DarkIcon> : <LightIcon></LightIcon>}
     </a>
   )
 }
