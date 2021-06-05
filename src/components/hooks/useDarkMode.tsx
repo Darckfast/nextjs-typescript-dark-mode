@@ -1,23 +1,28 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
+import { DefaultTheme } from 'styled-components';
 
-export const useDarkMode = (): [string, () => void] => {
-  const [theme, setTheme] = useState('light');
+export const useDarkMode
+  = (lightTheme: DefaultTheme, darkTheme: DefaultTheme):
+    [{ name: string, activeTheme: DefaultTheme }, () => void] => {
 
-  const setMode = mode => {
-    localStorage.setItem('theme', mode)
-    setTheme(mode)
+    const [theme, setTheme] = useState({ name: 'dark', activeTheme: darkTheme });
+
+    const themeToggler = (): void => {
+      const nextTheme = theme.name === 'light' ? 'dark' : 'light'
+      localStorage.setItem('theme', nextTheme)
+      setTheme({ name: nextTheme, activeTheme: nextTheme === 'light' ? lightTheme : darkTheme })
+    }
+
+    useEffect(() => {
+      const localTheme = localStorage.getItem('theme');
+      localTheme && setTheme(
+        {
+          name: localTheme,
+          activeTheme: localTheme === 'light' ? lightTheme : darkTheme
+        }
+      )
+    }, [])
+
+    return [theme, themeToggler]
   }
-
-  const themeToggler = (): void => {
-    console.log(theme)
-    setMode(theme === 'light' ? 'dark' : 'light')
-  }
-
-  useEffect(() => {
-    const localTheme = localStorage.getItem('theme');
-    localTheme && setTheme(localTheme)
-  }, [])
-
-  return [theme, themeToggler]
-}
