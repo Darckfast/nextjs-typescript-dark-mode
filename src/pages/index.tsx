@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { Container } from '../styles/pages/Home'
-import ToggleTheme from '../components/ToggleTheme'
+import { ToggleTheme } from '../components/ToggleTheme'
 import { GitHubIcon } from '../styles/icons/githubIcon'
 
 const Home: React.FC<any> = (props) => {
@@ -12,7 +12,7 @@ const Home: React.FC<any> = (props) => {
       </Head>
 
       <main>
-        <ToggleTheme changeTheme={props.themeToggle} currentTheme={props.currentTheme}></ToggleTheme>
+        <ToggleTheme />
         <h1>NextJS Template with Typescript</h1>
 
         <footer>
