@@ -4,7 +4,7 @@ import { Container } from '../styles/pages/Home'
 import { ToggleTheme } from '../components/ToggleTheme'
 import { GitHubIcon } from '../styles/icons/githubIcon'
 
-const Home: React.FC<any> = (props) => {
+const Home: React.FC = () => {
   return (
     <Container>
       <Head>
