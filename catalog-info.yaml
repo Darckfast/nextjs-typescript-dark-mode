@@ -4,6 +4,7 @@ metadata:
   name: nextjs-typescript-dark-mode
   annotations:
     github.com/project-slug: Darckfast/nextjs-typescript-dark-mode
+    backstage.io/techdocs-ref: value
 spec:
   type: other
   lifecycle: unknown
