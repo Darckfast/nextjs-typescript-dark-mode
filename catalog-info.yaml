@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: nextjs-typescript-dark-mode
+  annotations:
+    github.com/project-slug: Darckfast/nextjs-typescript-dark-mode
+spec:
+  type: other
+  lifecycle: unknown
+  owner: myself
